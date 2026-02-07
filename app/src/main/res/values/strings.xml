@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PS5 Update Blocker</string>
+    <string name="service_name">PS5 Update Blocker DNS</string>
+    <string name="start_blocking">Başlat</string>
+    <string name="stop_blocking">Durdur</string>
+    <string name="status_active">Aktif - PS5 Güncelleme Sunucuları Engelleniyor</string>
+    <string name="status_inactive">Pasif - DNS Engelleme Kapalı</string>
+    <string name="blocked_domains_count">Engellenen Domain Sayısı: %d</string>
+    <string name="service_running">DNS Engelleme Hizmeti Çalışıyor</string>
+    <string name="service_description">PS5 güncelleme sunucularına erişimi engelliyor</string>
+    <string name="channel_name">DNS Engelleme Hizmeti</string>
+    <string name="channel_description">PS5 Update Blocker bildirim kanalı</string>
+    <string name="vpn_request_title">VPN Bağlantısı Gerekli</string>
+    <string name="vpn_request_message">PS5 güncelleme sunucularını engellemek için VPN bağlantısına izin vermeniz gerekiyor. Bu uygulama verilerinizi toplamaz, sadece DNS isteklerini filtreler.</string>
+    <string name="info_text">Bu uygulama PS5 güncelleme sunucularına erişimi engeller. Proxy üzerinden çalışır ve sadece belirtilen domainleri filtreler.</string>
+    <string name="domain_list_title">Engellenen Sunucular:</string>
+</resources>

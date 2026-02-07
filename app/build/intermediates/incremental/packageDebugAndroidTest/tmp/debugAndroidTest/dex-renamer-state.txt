@@ -1,0 +1,4 @@
+#Thu Feb 05 11:38:45 TRT 2026
+base.0=D\:\\Temp\\PS5UpdateBlocker\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+path.0=0/classes.dex
+renamed.0=classes.dex
