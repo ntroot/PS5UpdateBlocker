@@ -1,40 +1,35 @@
 PS5UpdateBlocker
-A lightweight DNS and network-level filtering ruleset designed to prevent PlayStation 5 consoles from discovering, downloading, and installing system software updates.
+A lightweight proxy and network-level filtering tool designed to block PlayStation 5 system software update requests and preserve target firmware versions.
 Overview
- * Firmware Preservation: Keeps the console on its current firmware version for exploit/jailbreak stability.
- * Update Prevention: Blocks background and automatic system software downloads.
- * Telemetry Filtering: Restricts outbound analytics and diagnostic traffic to Sony servers.
-Blocked Domains
-# PS5 System Software Update Endpoints
-fus01.ps5.update.playstation.net
-fuk01.ps5.update.playstation.net
-dus01.ps5.update.playstation.net
-duk01.ps5.update.playstation.net
-
-# Telemetry & Diagnostics
-telemetry.api.playstation.com
-telemetry-ingest.api.playstation.com
-
-Deployment Methods
-1. Pi-hole / AdGuard Home
- * Open the admin interface.
- * Navigate to Filters > DNS Blocklists (or Blacklist / Custom Filtering Rules).
- * Import or append the domain list (blocklist.txt).
- * Save changes and flush the DNS cache.
-2. Router-Level Domain / Firewall Blocking
- * Access the router gateway interface.
- * Locate Domain Blocking, URL Filtering, or Access Control.
- * Add the domains listed above with an action set to Drop / Reject.
-3. Console Settings Configuration
-For complete mitigation, disable automatic updates in the PS5 settings:
- * Go to Settings > System > System Software > System Software Updates and Settings.
- * Set Download Update Files Automatically to Disabled.
- * Set Install Update Files Automatically to Disabled.
+ * Firmware Preservation: Keeps the console on its current firmware version for exploit/jailbreak compatibility.
+ * Update Interception: Drops and blocks incoming update manifests and payload requests via an HTTP/HTTPS proxy.
+ * Telemetry Filtering: Restricts diagnostic and analytics traffic to Sony servers.
+Prerequisites
+ * An Android device running the PS5UpdateBlocker application, connected to the same local network (Wi-Fi/Ethernet) as the PS5.
+ * The local IPv4 address of the Android device (e.g., 192.168.1.50).
+ * The listening proxy port configured in the app (default is usually 8080).
+Configuration & Usage
+1. Start the Android Application
+ * Launch PS5UpdateBlocker on your Android device.
+ * Note the displayed IP Address and Port.
+ * Tap Start to initiate the local proxy server.
+2. Configure PS5 Network Settings
+To route traffic through the blocking proxy, configure the console's network settings manually:
+ * On the PS5, go to Settings > Network > Settings > Set Up Internet Connection.
+ * Highlight your active network connection (Wi-Fi or LAN), press the Options button on the DualSense controller, and select Advanced Settings.
+ * Adjust the following parameters:
+   * Proxy Server: Change from Do Not Use to Use.
+   * Address: Enter the local IP address of your Android device (e.g., 192.168.1.50).
+   * Port Number: Enter the active port specified in the app (e.g., 8080).
+ * Select OK to save the changes and reconnect.
+3. Disable Automatic Console Updates
+Navigate to Settings > System > System Software > System Software Updates and Settings and disable both:
+ * Download Update Files Automatically -> Disabled
+ * Install Update Files Automatically -> Disabled
 Verification
- * On the PS5, navigate to Settings > Network > Connection Status.
- * Run a network connection test.
- * Check for system updates manually:
-   * The console should fail to connect to the update server and return a network/DNS error (e.g., CE-108853-5).
+ * Go to Settings > Network > Connection Status > Test Internet Connection.
+ * Check for system software updates manually via Settings > System > System Software Update.
+ * The console should fail to reach update endpoints, returning a connection error (e.g., CE-108853-5), while general network connectivity remains operational.
 Disclaimer
- * Blocking update endpoints will restrict access to PlayStation Network (PSN) features, game downloads, and online multiplayer.
- * This ruleset is intended solely for firmware version retention and offline usage.
+ * Blocking update endpoints restricts access to PlayStation Network (PSN) features, online multiplayer, and the PlayStation Store.
+ * The proxy host device must remain powered on and connected to the network while the PS5 is in use.
