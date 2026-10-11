@@ -75,14 +75,16 @@ To verify that the blocker is actively working:
 
 ---
 
-## Important Notes & Disclaimer
+## Disclaimer & Legal Notice
 
-* **PSN Limitations:** Blocking update endpoints prevents access to the PlayStation Network (PSN), online matchmaking, and the PlayStation Store.
-* **Persistent Connection:** The Android proxy app must remain running on the local network whenever the PS5 requires internet connectivity.
-* This tool is provided for educational and firmware-preservation purposes only.
+* **Non-Affiliation:** This project is an independent open-source utility and is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Sony Group Corporation, Sony Interactive Entertainment Inc., or any of their subsidiaries or affiliates.
+* **Trademarks:** "PlayStation", "PS5", "DualSense", and related marks are registered trademarks of Sony Interactive Entertainment Inc. All product and company names are trademarks™ or registered® trademarks of their respective holders. Their use here does not imply any affiliation with or endorsement by them.
+* **PSN Availability:** Blocking update endpoints restricts access to PlayStation Network (PSN) services, online matchmaking, and the PlayStation Store.
+* **No Warranty:** This software is provided "as is", without warranty of any kind, express or implied. Users assume all responsibility and risk regarding network configuration, account status, or console software management.
 
 ---
 
 ## License
 
-Distributed under the GPL License. See `LICENSE` for more information.
+Distributed under the GPL 3.0 License. See `LICENSE` for more information.
+
